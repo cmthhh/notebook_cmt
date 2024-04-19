@@ -27,4 +27,4 @@
 - [ ] 空格？
 
 ### 图片  
-  .<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/hahaha.jpg "hahaha")</div>  
+  .<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/hahaha.jpg "hahaha")</div>  
