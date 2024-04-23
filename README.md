@@ -5,6 +5,12 @@
   * [How to write ?](#写作)  
     * [文本处理](#文本处理)
     * [图片](#图片)
+* [COMSOL](#COMSOL)
+  * [导热模块](#导热模块)
+    * [导热机制](#导热机制)
+    * [广义传热方程](#广义传热方程)
+    * [边界条件](#边界条件)
+    * [仿真-保温瓶传热](#仿真-保温瓶传热) 
   
   ## 写作 
   ### 文本处理  
@@ -62,6 +68,20 @@
 * 牛顿冷却定律
 牛顿冷却定律实际上是一个特例的混合界条件。在热传递问题中，如果我们将牛顿冷却定律作为边界条件应用到热流方程中，该边界条件可以写成：
  .<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/bfc684d352c96cef9891a3efade475a.png)</div>  h为对流换热系数，考虑对流内/外，自然/强制.
+### 仿真-保温瓶传热 
+ .<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-23%20175605.png)</div><p align="center">构造几何模型，考虑到保温瓶对称性，做二维仿真就可以。</p> 
+ .<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-23%20180618.png)</div><p align="center">选择边界，定义显式的边界组，便于后面设定参数。</p> 
+ .<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-23%20182658.png)</div><p align="center">给个各模块添加材质。</p> 
+ .<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-23%20183534.png)</div><p align="center">设置全局参数，改动方便。</p> 
+ .<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-23%20183911.png)</div><p align="center">设定初始值。</p> 
+ .<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-23%20184219.png)</div><p align="center">由于金属片比较薄，直接设定热薄近似，算的快。</p> 
+ .<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-23%20184941.png)</div><p align="center">不同表面设定不同的热通量，这里的盖子上方是自然对流。</p> 
+ .<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-24%20002915.png)</div><p align="center">生成网格。</p> 
+ .<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-23%20213749.png)</div><p align="center">设定仿真时间和步长。</p> 
+ .<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-23%20213842.png)</div>
+ .<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-23%20214721.png)</div><p align="center">仿真结果</p> 
+ .<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-23%20215724.png)</div><p align="center">应用APP开发器功能，可以直接改参数。</p> 
+
 
 
 [^导热性]:导热系数K，稳态热传导条件下单位时间内通过单位面积（垂直于温度梯度方向）的热量。
