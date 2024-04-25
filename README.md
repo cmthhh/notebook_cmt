@@ -81,7 +81,28 @@
  .<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-23%20213842.png)</div>
  .<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-23%20214721.png)</div><p align="center">仿真结果</p> 
  .<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-23%20215724.png)</div><p align="center">应用APP开发器功能，可以直接改参数。</p> 
-
+### 场景  
+#### 非等温流 
+两个耦合：流动耦合与温度耦合（软件中集成）  
+三个方程：
+ .<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/f7f27c12188cb5b0e02f0f7859adae4.png)</div>  
+准数：判断是否为湍流 
+ .<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/92736371658398a3d3a81096f123947.png)</div> 
+强制对流：输远方程模型
+.<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/5ec0db001fa2829ef2fb74a9f0d6c50.png)</div> 
+#### 管道传热 
+看情况可以简化为一维。  
+.<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/41d508b33c560d9ba2c85047a3ebec0.png)</div> 
+一般情况：包含三部分热阻，分别为内部膜阻，壁层热阻，外部膜阻。
+.<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/81f18afc7a80b98f56aab4f21b92399.png)</div> 
+#### 多孔介质传热  
+三个控制方程：固体部分导热方程，流体部分热对流方程，局部平衡。
+.<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/02cf2bfd742b3d6e8c9d0e464e6de38.png)</div>
+局部平衡判据：Sparrow准数，Darcy准数。
+流体流动方程选择
+.<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/dee38cbf1767f15f1b8e89bffb67e24.png)</div>
+#### 蒸发与冷凝
+封闭区域仿真有时需要注意蒸发和冷凝带来的影响。
 
 
 [^导热性]:导热系数K，稳态热传导条件下单位时间内通过单位面积（垂直于温度梯度方向）的热量。
