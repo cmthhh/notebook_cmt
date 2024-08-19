@@ -109,3 +109,82 @@
 [^质量流率]:单位时间内通过某一截面的质量。  
 [^视角因子]:发射率：定义为一个物体实际辐射能力与理想黑体在相同温度下辐射能力的比例。  
 视角因子：描述了从一个表面（或一个表面元素）发射的辐射中有多少能到达另一个表面（或表面元素）。
+
+## 低频电磁场AC/DC模块
+### 如何选择模块
+.<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-23%20175605.png)</div><p align="center">模块选择参考图</p> 
+### 电场分析类型
+#### 静场模拟
+静电，直流，静磁。（稳态电流，无放电，无感应）
+#### 低频模拟
+交变电流，电磁感应
+#### 瞬态分析
+脉冲，电机，非线性材料
+### 分析依据：
+#### 麦克斯韦方程组
+安培定律，法拉第定律，高斯定律（电/磁），连续性方程（电荷守恒定律）
+#### 边界条件
+默认边界条件：零电荷，磁绝缘
+静电常用边界：接地，电势，终端（可利用“电路”与外部相接），零电荷。
+电流常用边界：接地，电势，终端，电绝缘。
+静电其他边界条件：悬浮电位（表面电压恒定但未知，可以通过“电路”接口与外部电路相连接），表面电荷密度，薄低介电常数间隙（边界上介电常数低），介电屏蔽（边界上介电常数高）。
+电流其他边界条件：悬浮电位（表面电压恒定但未知），法向电流密度（指定电流流入流出），接触阻抗（低电导率/介电常数），电屏蔽（高电导率，表面电流流动，不受外部电场影响），电接触。
+### 仿真-平板电容器
+.<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-23%20175605.png)</div><p align="center">更改箭头绘画，优化展示</p> 
+.<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-23%20175605.png)</div><p align="center">应用全局计算，调用结果</p> 
+.<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-23%20175605.png)</div><p align="center">连接电路</p> 
+.<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-23%20175605.png)</div><p align="center">不同频率下的仿真结果</p> 
+### 处理无限大空气域
+#### 参数化几何区域尺寸，查看其结果变化趋势
+.<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-23%20175605.png)</div><p align="center">更改几何构造</p> 
+#### 应用零电荷和悬浮电位，取平均值
+.<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-23%20175605.png)</div><p align="center">边界条件取平均值</p> 
+#### 制作外层无限元域
+.<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-23%20175605.png)</div><p align="center">无限元域</p> 
+### 仿真-三接口电容器
+.<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-23%20175605.png)</div><p align="center">无限元域</p> 
+.<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-23%20175605.png)</div><p align="center">仿真结果</p> 
+### 电路接口
+#### 耦合选择（根据物理场软件辅助选择）
+外部U vs. I,FEM提供电压，ODE计算电流
+外部I vs. U,FEM提供电流，ODE计算电压
+### 磁性材料建模
+相对磁导率，BH和HB曲线
+网格注意事项：线圈中由于趋肤效应的影响，边界层网格做四面体。
+### 仿真-线圈磁
+.<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-23%20175605.png)</div><p align="center">先进行线圈几何分析</p> 
+.<div align=center>![加载失败](https://github.com/cmthhh/notebook_cmt/blob/main/photos/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-04-23%20175605.png)</div><p align="center">仿真结果</p> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
